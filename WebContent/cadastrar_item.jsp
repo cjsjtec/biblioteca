@@ -3,7 +3,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
-				<h1>Cadastrar ites</h1>
+				<h1>Cadastrar itens</h1>
 
 				<div class="row">
 					<div class="col-md-12">
@@ -29,20 +29,24 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="form-group">
-							<label for="tipo">Tipo:</label>
-							<label for="revista">Revista <input type="radio" id="revista" name="tipo"></label>
-							<label for="livro">Livro <input type="radio" id="livro" name="tipo"></label>
+							<label for="tipo">Tipo:</label> <label> <input
+								type="radio" id="revista" name="tipo">Revista
+							</label> <label> <input type="radio" id="livro" name="tipo">Livro
+							</label>
 						</div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-12">
+						<input class="btn btn-primary btn-block" type="submit"
+							value="Cadastrar" />
 					</div>
 				</div>
 
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-md-6 col-md-offset-3">
-				<input class="btn btn-primary" type="submit" value="Cadastrar" />
-			</div>
-		</div>
+
 	</div>
 </form>
 <%@include file="footer.jsp"%>
