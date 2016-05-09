@@ -12,7 +12,7 @@
 				<div class="col-md-6 col-md-offset-3">
 					<div class="form-group">
 				    	<label for="item">Item:</label>
-				    	<input id="item" class="form-control" type="text"/>
+				    	<input id="item" class="form-control" type="text" name="item"/>
 				    </div>					
 				</div> 
 			</div>
@@ -20,7 +20,7 @@
 				<div class="col-md-6 col-md-offset-3">
 					<div class="form-group">
 		    			<label for="cliente">Cliente:</label>
-		    			<input id="cliente" class="form-control" type="text"/>
+		    			<input id="cliente" class="form-control" type="text" name="cliente"/>
 		    		</div>
 	    		</div>
 	    	</div>

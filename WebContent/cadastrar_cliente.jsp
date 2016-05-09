@@ -3,12 +3,12 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
-				<h1>Cadastrar itens</h1>
+				<h1>Cadastrar Cliente</h1>
 
 				<div class="row">
 					<div class="col-md-12">
 						<div class="form-group">
-							<label for="nome">Nome:</label> <input id="id" class="form-control" type="text" name="nome"/>
+							<label>Nome:</label> <input id="nome_cliente" class="form-control" type="text" name="nome" />
 						</div>
 					</div>
 				</div>
@@ -16,7 +16,8 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="form-group">
-							<label for="status">Status:</label> <select class="form-control" name="status">
+							<label >Status:</label> 
+							<select class="form-control" name="status">
 								<option selected>Selecione um Status</option>
 								<option value="a">Ativo</option>
 								<option value="i">Indisponível</option>
@@ -28,9 +29,9 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="form-group">
-							<label for="tipo">Tipo:</label> <label> 
-							<input type="radio" id="revista" name="tipo" value="r">Revista</label> 
-							<label> <input type="radio" id="livro" name="tipo" value="l">Livro </label>
+							<label for="tipo">Tipo:</label> 
+							<label> <input type="radio" id="revista" name="tipo" value="p">Professor</label>
+							<label> <input type="radio" id="livro" name="tipo" value="a">Aluno </label>
 						</div>
 					</div>
 				</div>

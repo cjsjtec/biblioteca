@@ -23,12 +23,12 @@
 		<nav class="navbar navbar-fixed-top navbar-inverse">
 			<div class="navbar-header">
 				<a href="index.jsp" class="navbar-brand">Biblioteca</a>
-				<button type="button" data-target=".navbar-collapse"
-					data-toggle="collapse" class="navbar-toggle">Menu</button>
+				<button type="button" data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle">Menu</button>
 			</div>
 			<div class="collapse navbar-collapse">
 			<ul class="navbar-nav nav">
-				<li><a href="cadastrar_item.jsp">Cadastrar Livro</a></li>
+				<li><a href="cadastrar_item.jsp">Cadastrar item</a></li>
+				<li><a href="cadastrar_cliente.jsp">Cadastrar cliente</a></li>
 				<li><a href="registrar_emprestimos.jsp">Registrar Emprestimos</a></li>
 				<li><a href="registrar_devolucao.jsp">Registrar Devoluções</a></li>
 				<li><a href="consultar.jsp">Consultar Emprestimos</a></li>
