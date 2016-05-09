@@ -1,7 +1,3 @@
 /build/
 /WebContent/WEB-INF/*
-.classpath
-.project
-.jsdscope-.settings
-MANIFEST.MF
 persistence.xml
