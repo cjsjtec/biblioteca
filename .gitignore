@@ -3,6 +3,5 @@
 .classpath
 .project
 .jsdscope-.settings
-.settings/
 MANIFEST.MF
 persistence.xml
