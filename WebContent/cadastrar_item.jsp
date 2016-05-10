@@ -1,5 +1,5 @@
 <%@include file="cabecalho.jsp"%>
-<form action="cadastrarItem" method="POST">
+<form action="CadastrarItem" method="POST">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
@@ -13,17 +13,7 @@
 					</div>
 				</div>
 
-				<div class="row">
-					<div class="col-md-12">
-						<div class="form-group">
-							<label for="status">Status:</label> <select class="form-control" name="status">
-								<option selected>Selecione um Status</option>
-								<option value="a">Ativo</option>
-								<option value="i">Indisponível</option>
-							</select>
-						</div>
-					</div>
-				</div>
+
 
 				<div class="row">
 					<div class="col-md-12">
@@ -31,6 +21,15 @@
 							<label for="tipo">Tipo:</label> <label> 
 							<input type="radio" id="revista" name="tipo" value="r">Revista</label> 
 							<label> <input type="radio" id="livro" name="tipo" value="l">Livro </label>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+							<label>Genero: </label>
+							<label><input type="radio" name="genero" value="E">Especial</label>						
+							<label><input type="radio" name="genero" value="N">Normal</label>
 						</div>
 					</div>
 				</div>
