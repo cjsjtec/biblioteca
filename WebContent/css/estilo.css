@@ -19,6 +19,7 @@ footer {
 }
 body {
 	margin-bottom: -11px;
+	background-image: "img/fundo.jpg";
 }
 .tab-pane {
 	padding: 10px 5px;

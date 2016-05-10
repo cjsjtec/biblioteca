@@ -1,0 +1,17 @@
+body {
+	background-image: url(../img/fundo.jpg);
+	background-size:100%;
+}
+
+.rotulo-campo-login {
+	font-family
+}
+.panel {
+	background-color: rgba(255,255,255,0.75);
+	margin-top:50%;
+}
+
+.panel:hover {
+	background-color: rgba(255,255,255,0.80);
+	transition: 1s;
+}
