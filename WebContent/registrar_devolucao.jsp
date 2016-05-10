@@ -1,5 +1,5 @@
 <%@include file="cabecalho.jsp" %>
-<form action="registrarDevolucao" method="POST">
+<form action="RegistrarDevolucao" method="POST">
 <div class="container"> 
 	<div class="row"> 
 		<div class="col-md-8 col-md-offset-2">
