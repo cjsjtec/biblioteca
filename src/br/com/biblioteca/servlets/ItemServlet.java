@@ -2,6 +2,7 @@ package br.com.biblioteca.servlets;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -44,7 +45,8 @@ public class ItemServlet extends HttpServlet {
 		item.setGenero(request.getParameter("genero"));
 		
 		ItemBO.getInstance().salvar(item); 
-
+		RequestDispatcher rd = request.getRequestDispatcher("/contato-adicionado.jsp");
+		rd.forward(request,response);
 	}
 
 }

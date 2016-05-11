@@ -9,7 +9,8 @@
 <title>Loja Virtual</title>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 <!--  <link rel="stylesheet" type="text/css" href="css/animate.css">
 <meta name="viewport" content="width=device-width">
@@ -18,9 +19,10 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
 </head>
 <body>	
-	<header style="margin-bottom:100px;"> 
+	<header> 
 		<nav class="navbar navbar-fixed-top navbar-inverse">
 			<div class="navbar-header">
 				<a href="index.jsp" class="navbar-brand">Biblioteca</a>
@@ -28,11 +30,9 @@
 			</div>
 			<div class="collapse navbar-collapse">
 			<ul class="navbar-nav nav">
-				<li><a href="cadastrar_item.jsp">Cadastrar item</a></li>
-				<li><a href="cadastrar_cliente.jsp">Cadastrar cliente</a></li>
-				<li><a href="registrar_emprestimos.jsp">Registrar Emprestimos</a></li>
-				<li><a href="registrar_devolucao.jsp">Registrar Devoluções</a></li>
-				<li><a href="consultar.jsp">Consultar Emprestimos</a></li>
+				<li><a href="itens.jsp">Itens</a></li>
+				<li><a href="cliente.jsp">Cliente</a></li>
+				<li><a href="emprestimos.jsp">Emprestimos</a></li>
 			</ul>
 		</nav>
 	 </header>

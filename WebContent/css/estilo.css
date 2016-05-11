@@ -24,3 +24,13 @@ body {
 .tab-pane {
 	padding: 10px 5px;
 }
+.cursor{
+	cursor: pointer;
+}
+.titulo {
+	font-size: 25px;
+	font-family: "Arial";
+}
+.h1{
+	margin-top:10px;
+}

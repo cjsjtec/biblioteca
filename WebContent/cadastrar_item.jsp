@@ -1,4 +1,5 @@
 <%@include file="cabecalho.jsp"%>
+<main>
 <form action="CadastrarItem" method="POST">
 	<div class="container">
 		<div class="row">
@@ -44,4 +45,5 @@
 
 	</div>
 </form>
+</main>
 <%@include file="footer.jsp"%>
