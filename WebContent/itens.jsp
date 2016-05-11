@@ -47,8 +47,8 @@
 </main>
 <script type="text/javascript">
 $("#pesquisar_item").on('click',function() {
-	/*$.ajax({
-		url:"ListarItens",
+	$.ajax({
+		url:"/biblioteca/ListarItens",
 		data: $("#itens").serialize(),
 		type: 'post',
 		dataType: 'json',
@@ -60,16 +60,6 @@ $("#pesquisar_item").on('click',function() {
 		success: function(retorno) {
 			console.log(retorno);
 		}
-	});*/
-    $.get("/biblioteca/ListarItens/", 
-	{ 	
-    	especial: $("input[name=especial]").val(),
-    	tipo_item: $("input[name=tipo_item]").val(),
-    	descricao_item: $("input[name=descricao_item]").val() 
-    	
-	},
-  	function(data){
-	    $("#divRetorno").html(data);
 	});
 });
 
