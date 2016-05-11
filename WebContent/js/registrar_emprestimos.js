@@ -1,6 +1,5 @@
-function requestServer() {
+function requestServer(data) {
 	
-	console.log('x2');
 	$.ajax({
 		url: '/biblioteca/RegistrarEmprestimosServlet',
 		data:{'teste':'xpto'},

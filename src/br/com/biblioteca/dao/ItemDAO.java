@@ -27,7 +27,7 @@ public class ItemDAO {
 		}
 		return entityManager;
 	}
-	private ItemDAO() {
+	public ItemDAO() {
 		entityManager = getEntityManager();
 	}
 
@@ -35,6 +35,5 @@ public class ItemDAO {
 		entityManager.getTransaction().begin();
 		entityManager.persist(item);
 		entityManager.getTransaction().commit();
-	
 	}
 }

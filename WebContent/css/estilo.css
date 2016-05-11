@@ -29,8 +29,20 @@ body {
 .tab-pane {
 	padding: 10px 5px;
 }
+<<<<<<< HEAD
 
 h1.title {
 	font-family: 'Noto Serif', serif;
 	font-size: 16px;
+=======
+.cursor{
+	cursor: pointer;
+}
+.titulo {
+	font-size: 25px;
+	font-family: "Arial";
+}
+.h1{
+	margin-top:10px;
+>>>>>>> 89335d97d1784d3f8241d50291ea920cd4b0563e
 }

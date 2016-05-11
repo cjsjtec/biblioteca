@@ -1,6 +1,7 @@
 package br.com.biblioteca.servlets;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,9 +36,11 @@ public class RegistrarEmprestimosServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		  response.setContentType("text/plain");  
-		  response.setCharacterEncoding("UTF-8"); 
-		  response.getWriter().write('a'); 
+		//String json = new Gson().toJson(someObject);
+		
+		response.setContentType("application/json");
+		response.setCharacterEncoding("UTF-8"); 
+		response.getWriter().write("{teste:xpto}"); 
 	}
 
 }

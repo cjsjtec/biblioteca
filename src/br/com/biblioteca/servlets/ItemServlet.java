@@ -2,6 +2,7 @@ package br.com.biblioteca.servlets;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,7 +15,7 @@ import br.com.biblioteca.model.Item;
 /**
  * Servlet implementation class ItemServlet
  */
-@WebServlet("/ItemServlet")
+@WebServlet("/CadastrarItem")
 public class ItemServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -40,11 +41,12 @@ public class ItemServlet extends HttpServlet {
 		Item item =  new Item();
 		
 		item.setNome(request.getParameter("nome"));
-		item.setStatus(request.getParameter("status"));
 		item.setTipo(request.getParameter("tipo"));
+		item.setGenero(request.getParameter("genero"));
 		
 		ItemBO.getInstance().salvar(item); 
-
+		RequestDispatcher rd = request.getRequestDispatcher("/contato-adicionado.jsp");
+		rd.forward(request,response);
 	}
 
 }
