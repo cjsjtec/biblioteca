@@ -8,7 +8,7 @@ public class ClienteBO {
 
     private ClienteBO() {
     }
-    /**
+    /**teste denis
      * Singletton
      *
      * @return A inst�ncia �nica da classe

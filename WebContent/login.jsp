@@ -13,9 +13,7 @@
 		<div class="row">
 			<div class="col-md-4 col-md-offset-4">
 				<div class="row">
-					<div class="col-md-12">
-						<img src="img/logo.png" id="logo">
-					</div>
+
 				</div>
 				<div class="panel">
 					<div class="panel-body">
@@ -28,7 +26,12 @@
 							<input type="text" name="password" id="password" class="form-control">
 						</div>
 						<div class="form-group">
-							<button class="btn btn-primary btn-block" type="button">Sing in</button>
+							<button class="btn btn-primary btn-block" type="button">Entrar</button>
+							<button class="btn btn-primary btn-block" type="button">Cadastrar</button>
+						</div>
+						
+						<div>
+							<a href="#">Esqueci a senha</a>
 						</div>
 					</div>
 				</div>
