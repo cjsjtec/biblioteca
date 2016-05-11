@@ -1,43 +1,21 @@
 <%@include file="cabecalho.jsp" %>
-<form action="registrarDevolucao" method="POST">
-<div class="container"> 
-	<div class="row"> 
-		<div class="col-md-8 col-md-offset-2">
-			<div class="row">
-				<div class="col-md-6 col-md-offset-3">
-					<h1>Registar Emprestimo</h1>					
-				</div> 
-			</div>
-			<div class="row">
-				<div class="col-md-6 col-md-offset-3">
-					<div class="form-group">
-				    	<label for="item">Item:</label>
-				    	<input id="item" class="form-control" type="text" name="item"/>
-				    </div>					
-				</div> 
-			</div>
-			<div class="row">
-				<div class="col-md-6 col-md-offset-3">
-					<div class="form-group">
-		    			<label for="cliente">Cliente:</label>
-		    			<input id="cliente" class="form-control" type="text" name="cliente"/>
-		    		</div>
-	    		</div>
-	    	</div>
-	    	<div class="row">
-				<div class="col-md-6 col-md-offset-3">
-					<div class="form-group">
-		    			<label>Tipo Cliente:</label><br>
-		    			<label><input type="radio" name="tipo_cliente" value="p" >Professor</label>
-		    			<label><input type="radio" name="tipo_cliente" value="a" >Aluno</label>
-
-		    		</div>
-	    		</div>
-	    	</div>
-		</div>
-	</div>
+<div class="alert alert-info">
+	<h1 class="title text-center">Registrar emprestimo</h1>
 </div>
-    <input class="btn btn-primary" type="submit" value="Cadastrar"/>
-</form>
+<div class="container">
+	<form class="form-horizontal" action="registrarDevolucao" method="POST" >
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="pesquisa">Titulo do item:</label>
+			<div class="col-md-4">
+			<div class="input-group">
+		    	<input type="text" id="pesquisa" name="pesquisa" class="form-control">
+		        <span class="input-group-btn">
+	    	  	  <button class="btn btn-default" type="button">Pesquisar!</button>
+		      </span>
+			</div>
+			</div>
+		</div>
+	</form>
+</div>
 
 <%@include file="footer.jsp" %>

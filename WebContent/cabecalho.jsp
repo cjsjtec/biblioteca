@@ -20,7 +20,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </head>
 <body>	
-	<header style="margin-bottom:100px;"> 
+	<header style="margin-bottom:50px;"> 
 		<nav class="navbar navbar-fixed-top navbar-inverse">
 			<div class="navbar-header">
 				<a href="index.jsp" class="navbar-brand">Biblioteca</a>
