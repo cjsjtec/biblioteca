@@ -29,10 +29,7 @@
 							</div>
 							<div class="form-group">
 								<label>Digite o nome do item desejado.</label>
-							  
-							  
-							  uiy
-							  	<input type="text"  class="form-control" name="descricao_item" placeholder="Digite uma breve descricao ou nome do item que deseja">
+							 	<input type="text"  class="form-control" name="descricao_item" placeholder="Digite uma breve descricao ou nome do item que deseja">
 							</div>
 							<div class="btn-group">
 								<input type="button" id="pesquisar_item" class="btn btn-primary btn-block" value="Pesquisar">
