@@ -8,14 +8,16 @@
 			<label class="col-md-2 control-label" for="pesquisa">Titulo do item:</label>
 			<div class="col-md-4">
 			<div class="input-group">
-		    	<input type="text" id="pesquisa" name="pesquisa" class="form-control">
+		    	<input type="text" id="titulo" name="pesquisa" class="form-control">
 		        <span class="input-group-btn">
-	    	  	  <button class="btn btn-default" type="button">Pesquisar!</button>
+	    	  	  <button class="btn btn-default" id="pesquisa" type="button">Pesquisar!</button>
 		      </span>
 			</div>
 			</div>
 		</div>
 	</form>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/registrar_emprestimos.js"></script>
 </div>
 
 <%@include file="footer.jsp" %>
