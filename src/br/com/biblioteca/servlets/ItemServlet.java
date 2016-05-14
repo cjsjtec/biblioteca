@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.gson.GsonBuilder;
+
 import br.com.biblioteca.controller.ItemBO;
 import br.com.biblioteca.model.Item;
 
@@ -39,7 +41,6 @@ public class ItemServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Item item =  new Item();
-		
 		item.setNome(request.getParameter("nome"));
 		item.setTipo(request.getParameter("tipo"));
 		item.setGenero(request.getParameter("genero"));
