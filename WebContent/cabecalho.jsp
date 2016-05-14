@@ -22,11 +22,7 @@
 
 </head>
 <body>	
-<<<<<<< HEAD
-	<header style="margin-bottom:50px;"> 
-=======
 	<header> 
->>>>>>> 89335d97d1784d3f8241d50291ea920cd4b0563e
 		<nav class="navbar navbar-fixed-top navbar-inverse">
 			<div class="navbar-header">
 				<a href="index.jsp" class="navbar-brand">Biblioteca</a>
