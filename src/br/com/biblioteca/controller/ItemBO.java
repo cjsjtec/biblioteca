@@ -20,15 +20,14 @@ public class ItemBO {
         }
         return instance;
     }
-    public Item salvar(Item item) {
+    public void inserir(Item item) {
     	//Chama o dao aqui
     	ItemDAO dao = ItemDAO.getInstance();
 
-    	dao.setItem(item);
+    	dao.Inserir(item);
     	
     	// Notifica a tela das altera��es
     	//setChanged();
     	//notifyObservers();
-        return item;
     }
 }

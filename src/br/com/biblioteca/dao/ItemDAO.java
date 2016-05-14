@@ -1,17 +1,9 @@
 package br.com.biblioteca.dao;
 
-import javax.persistence.EntityManager;
-
-//import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-
 import br.com.biblioteca.model.Item;
 
-public class ItemDAO {
+public class ItemDAO extends GenericDAO {
 	private static ItemDAO instance;
-
-	protected EntityManager entityManager;
 
 	public static ItemDAO getInstance() {
 		if (instance == null) {
@@ -19,19 +11,8 @@ public class ItemDAO {
 		}
 		return instance;
 	}
-	
-	private EntityManager getEntityManager() {
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("biblioteca-unit");
-		if (entityManager == null) {
-			entityManager = factory.createEntityManager();
-		}
-		return entityManager;
-	}
-	public ItemDAO() {
-		entityManager = getEntityManager();
-	}
 
-	public void setItem(Item item) {
+	public void Inserir(Item item) {
 		entityManager.getTransaction().begin();
 		entityManager.persist(item);
 		entityManager.getTransaction().commit();

@@ -15,7 +15,7 @@ public class Usuario {
 	private String nome;
 	private String username;
 	private String senha;
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -40,5 +40,6 @@ public class Usuario {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+
 
 }
