@@ -8,14 +8,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.biblioteca.dao.UsuarioDAO;
+import br.com.biblioteca.controller.UsuarioBO;
 import br.com.biblioteca.model.Usuario;
 
 @WebServlet("/CadastraUsuario")
 public class CadastraUsuarioServlet extends HttpServlet {
 
-	private static final long serialVersionUID = 1L;
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5261559560295917135L;
+
 	public CadastraUsuarioServlet(){
 		super();
 	}
@@ -37,8 +41,9 @@ public class CadastraUsuarioServlet extends HttpServlet {
 		usuario.setUsername(username);
 		usuario.setSenha(senha);
 		
-		UsuarioDAO dao = new UsuarioDAO().getInstance();
-		dao.setUsuario(usuario);
+		UsuarioBO bo = UsuarioBO.getInstance();
+		
+		bo.salvar(usuario);
 		
 		
 		

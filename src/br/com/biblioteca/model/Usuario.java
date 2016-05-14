@@ -1,12 +1,16 @@
 package br.com.biblioteca.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="usuario")
 public class Usuario {
 
+	@Id
+	@GeneratedValue
 	private Long id;
 	private String nome;
 	private String username;

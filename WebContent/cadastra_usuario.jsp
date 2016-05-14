@@ -7,7 +7,8 @@
 <title>Cadastrar usuário</title>
 </head>
 <body>
-<form action="CadastraUsuario" method="post">
+<form action="Controler" method="post">
+	<input type="hidden" name="action" value="CadastrarUsuario">
 	nome:<input type="text" name="nome"><br>
 	username:<input type="text" name="username"><br>
 	senha:<input type="text" name="senha"><br>

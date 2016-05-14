@@ -18,7 +18,7 @@ public class UsuarioBO {
 	}
 	
 	public boolean salvar(Usuario usuario){
-		UsuarioDAO dao = UsuarioDAO.getInstance();
+		UsuarioDAO dao = new UsuarioDAO();
 		dao.setUsuario(usuario);
 		// aqui deve ir tratamentos de erros 
 		return true ;

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="META-INF"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
 		<attributes>
@@ -26,5 +25,6 @@
 	<classpathentry kind="lib" path="C:/Users/Denis/Desktop/jars/mysql-connector-java-5.1.36-bin.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Denis/Desktop/jars/persistence-api-1.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Denis/Desktop/jars/servlet-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Denis/Desktop/jars/cdi-api-1.2.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
