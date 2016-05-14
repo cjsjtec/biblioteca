@@ -8,7 +8,7 @@
 <body>
 	<form>
 		<div>
-			<label></label>
+			<label>xpto</label>
 		</div>
 	</form>
 </body>
