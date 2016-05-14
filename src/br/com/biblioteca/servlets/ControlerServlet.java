@@ -1,6 +1,7 @@
 package br.com.biblioteca.servlets;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,8 +25,13 @@ public class ControlerServlet extends HttpServlet {
 		
 		switch (acao) {
 		case "CadastrarUsuario":
-			CadastraUsuarioServlet acaoServlet = new CadastraUsuarioServlet();
-			acaoServlet.doPost(request, response);			
+			CadastraUsuarioServlet cadUser = new CadastraUsuarioServlet();
+			cadUser.doPost(request, response);			
+			break;
+			
+		case "CadastrarItem":
+			ItemCadastrarServlet itemCad = new ItemCadastrarServlet();
+			itemCad.doPost(request, response);
 			break;
 
 		default:

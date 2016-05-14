@@ -45,7 +45,7 @@ public class ItemServlet extends HttpServlet {
 		item.setTipo(request.getParameter("tipo"));
 		item.setGenero(request.getParameter("genero"));
 		
-		ItemBO.getInstance().salvar(item); 
+		ItemBO.getInstance().inserir(item); 
 		RequestDispatcher rd = request.getRequestDispatcher("/contato-adicionado.jsp");
 		rd.forward(request,response);
 	}

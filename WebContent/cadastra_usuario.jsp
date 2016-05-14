@@ -12,6 +12,7 @@
 	nome:<input type="text" name="nome"><br>
 	username:<input type="text" name="username"><br>
 	senha:<input type="text" name="senha"><br>
+	tipo:<input type="text" name="tipo"><br>
 	<button type="submit">Cadastrar</button>
 </form>
 
