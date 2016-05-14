@@ -38,7 +38,6 @@ public class ItemCadastrarServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Item item =  new Item();
-		
 		item.setNome(request.getParameter("nome"));
 		item.setTipo(request.getParameter("tipo"));
 		item.setGenero(request.getParameter("genero"));
