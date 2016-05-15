@@ -1,7 +1,4 @@
 /build/
-
 /WebContent/WEB-INF/lib/*
-
 persistence.xml
-
 .classpath
