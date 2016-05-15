@@ -15,7 +15,7 @@ public class Item {
 	private Long id;
 	
 	private String nome;
-//	private String status;
+	private String status;
 	
 	private String tipo;
 	
@@ -40,12 +40,12 @@ public class Item {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-//	public String getStatus() {
-//		return status;
-//	}
-//	public void setStatus(String string) {
-//		this.status = string;
-//	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String string) {
+		this.status = string;
+	}
 	public String getTipo() {
 		return tipo;
 	}

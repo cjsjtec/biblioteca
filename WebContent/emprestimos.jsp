@@ -1,23 +1,23 @@
 <%@include file="cabecalho.jsp" %>
 <main>
-<div class="alert alert-info">
-	<h1 class="title text-center">Registrar emprestimo</h1>
+<div class="tilulo">
+	<h1 class="descricao-titulo">Registrar emprestimo</h1>
 </div>
 <div class="container">
-	<form class="form-horizontal" action="registrarDevolucao" method="POST" >
+	<form class="form-horizontal">	
 		<div class="form-group">
 			<label class="col-md-2 control-label" for="pesquisa">Titulo do item:</label>
 			<div class="col-md-4">
 			<div class="input-group">
-		    	<input type="text" id="titulo" name="pesquisa" class="form-control">
+		    	<input type="text" id="busca" name="busca" class="form-control">
 		        <span class="input-group-btn">
 	    	  	  <button class="btn btn-default" id="pesquisa" type="button">Pesquisar!</button>
 		      </span>
 			</div>
 			</div>
 		</div>
+		<script type="text/javascript" src="js/emprestimos.js"></script>
 	</form>
-	<script type="text/javascript" src="js/registrar_emprestimos.js"></script>
 </div>
 </main>
 

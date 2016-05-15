@@ -8,7 +8,7 @@ public class GenericDAO {
 	protected EntityManager entityManager;
 	
 	protected EntityManager getEntityManager() {
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("biblioteca");
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("biblioteca-unit");//Troca no persistence 
 		if (entityManager == null) {
 			entityManager = factory.createEntityManager();
 		}

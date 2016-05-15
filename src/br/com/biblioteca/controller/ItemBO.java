@@ -44,9 +44,7 @@ public class ItemBO {
     }
     
     public List<Item> listar(String nome) {
-    	//Chama o dao aqui
-    	ItemDAO dao = ItemDAO.getInstance();
-    	return dao.getItens(nome);
+    	return ItemDAO.getInstance().getItens(nome);    	
     }
     
 }
