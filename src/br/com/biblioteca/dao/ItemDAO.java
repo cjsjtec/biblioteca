@@ -1,9 +1,15 @@
 package br.com.biblioteca.dao;
 
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+
 import br.com.biblioteca.model.Item;
 
 public class ItemDAO extends GenericDAO {
 	private static ItemDAO instance;
+	EntityManager entityManager = getEntityManager();
 
 	public static ItemDAO getInstance() {
 		if (instance == null) {
@@ -17,4 +23,33 @@ public class ItemDAO extends GenericDAO {
 		entityManager.persist(item);
 		entityManager.getTransaction().commit();
 	}
+
+	public void Alterar(Item item) {
+		entityManager.getTransaction().begin();
+		entityManager.merge(item);
+		entityManager.getTransaction().commit();
+	}
+
+	public void Remover(Item item) {
+		entityManager.getTransaction().begin();
+		entityManager.remove(item);
+		entityManager.getTransaction().commit();
+	}
+
+	public Item getItem(long id) { // cuidado, use o import
+		return entityManager.find(Item.class, id);
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<Item> getItens(String nome) { 
+		Query query = entityManager.createQuery("select t from Tarefa as t where t.nome = :paramNome");
+		
+		query.setParameter("paramNome", nome);
+
+		List<Item> lista = query.getResultList();
+		
+		return lista;
+
+	}
+
 }
