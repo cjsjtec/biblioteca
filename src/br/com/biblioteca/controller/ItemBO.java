@@ -1,6 +1,6 @@
 package br.com.biblioteca.controller;
 
-import java.util.List;
+import com.google.gson.Gson;
 
 import br.com.biblioteca.dao.ItemDAO;
 import br.com.biblioteca.model.Item;
@@ -11,11 +11,6 @@ public class ItemBO {
     private ItemBO() {
     }
 
-    /**
-     * Singletton
-     *
-     * @return A inst�ncia �nica da classe
-     */
     public static ItemBO getInstance() {
         if (instance == null) {
             instance = new ItemBO();
@@ -43,8 +38,8 @@ public class ItemBO {
     	return dao.getItem(id);
     }
     
-    public List<Item> listar(String nome) {
-    	return ItemDAO.getInstance().getItens(nome);    	
+    public String listar(String nome) {
+    	return new Gson().toJson(ItemDAO.getInstance().getItens(nome));
     }
     
 }

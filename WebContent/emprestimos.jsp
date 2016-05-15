@@ -16,6 +16,23 @@
 			</div>
 			</div>
 		</div>
+		<div class="row hidden">
+			<div class='col-md-12'>
+				<table class='table'>
+					<thead>
+						<tr>
+							<th>Nome</th>
+							<th>Tipo</th>
+							<th>Status</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						
+					</tbody>
+				</table>
+			</div>
+		</div>
 		<script type="text/javascript" src="js/emprestimos.js"></script>
 	</form>
 </div>
