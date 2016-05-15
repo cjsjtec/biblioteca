@@ -1,5 +1,7 @@
 package br.com.biblioteca.controller;
 
+import java.util.List;
+
 import br.com.biblioteca.dao.ItemDAO;
 import br.com.biblioteca.model.Item;
 
@@ -21,13 +23,30 @@ public class ItemBO {
         return instance;
     }
     public void inserir(Item item) {
+
+    	ItemDAO dao = ItemDAO.getInstance();
+    	dao.Inserir(item);
+
+    }
+    public void alterar(Item item) {
+    	ItemDAO dao = ItemDAO.getInstance();
+    	dao.Alterar(item);
+    }
+    
+    public void remover(Item item) {
+    	ItemDAO dao = ItemDAO.getInstance();
+    	dao.Remover(item);
+    }
+    
+    public Item pegarItem(long id){
+    	ItemDAO dao = ItemDAO.getInstance();
+    	return dao.getItem(id);
+    }
+    
+    public List<Item> listar(String nome) {
     	//Chama o dao aqui
     	ItemDAO dao = ItemDAO.getInstance();
-
-    	dao.Inserir(item);
-    	
-    	// Notifica a tela das altera��es
-    	//setChanged();
-    	//notifyObservers();
+    	return dao.getItens(nome);
     }
+    
 }
