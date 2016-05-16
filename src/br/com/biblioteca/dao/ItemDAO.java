@@ -42,7 +42,6 @@ public class ItemDAO extends GenericDAO {
 
 	@SuppressWarnings("unchecked")
 	public List<Item> getItens(String nome) { 
- 
 		return entityManager
 				.createQuery("select t from Item as t where t.nome LIKE :paramNome")
 				.setParameter("paramNome", "%" + nome + "%")

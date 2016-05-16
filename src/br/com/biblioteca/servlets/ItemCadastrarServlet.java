@@ -40,7 +40,7 @@ public class ItemCadastrarServlet extends HttpServlet {
 		Item item =  new Item();
 		item.setNome(request.getParameter("nome"));
 		item.setTipo(request.getParameter("tipo"));
-		item.setGenero(request.getParameter("genero"));
+//		item.setGenero(request.getParameter("genero"));
 		
 		ItemBO bo = ItemBO.getInstance();
 		bo.inserir(item);

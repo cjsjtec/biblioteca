@@ -43,7 +43,7 @@ public class ItemServlet extends HttpServlet {
 		Item item =  new Item();
 		item.setNome(request.getParameter("nome"));
 		item.setTipo(request.getParameter("tipo"));
-		item.setGenero(request.getParameter("genero"));
+//		item.setGenero(request.getParameter("genero"));
 		
 		ItemBO.getInstance().inserir(item); 
 		RequestDispatcher rd = request.getRequestDispatcher("/contato-adicionado.jsp");

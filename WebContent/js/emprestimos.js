@@ -19,6 +19,7 @@ function requestServer(data) {
 $('#pesquisa').on('click', function() {
 	var data = {acao: 'PESQUISA',busca: $('#busca').val()};
 	var response = requestServer(data);
+	console.log(response);
 	montarListaitem(response);
 });
 

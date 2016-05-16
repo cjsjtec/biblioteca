@@ -15,12 +15,13 @@ public class Item {
 	private Long id;
 	
 	private String nome;
-	private String status;
-	
 	private String tipo;
+	private String status;
+	private String especial;
 	
-//	@Column(name = "genero", nullable = true, columnDefinition = "String default N")
-	private String genero; 
+	
+
+	
 	
 	public Long getId() {
 		return id;
@@ -28,23 +29,12 @@ public class Item {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getGenero() {
-		return genero;
-	}
-	public void setGenero(String genero) {
-		this.genero = genero;
-	}
+
 	public String getNome() {
 		return nome;
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-	public String getStatus() {
-		return status;
-	}
-	public void setStatus(String string) {
-		this.status = string;
 	}
 	public String getTipo() {
 		return tipo;
@@ -52,6 +42,16 @@ public class Item {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-	
-	
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String string) {
+		this.status = string;
+	}
+	public String getEspecial() {
+		return especial;
+	}
+	public void setEspecial(String especial) {
+		this.especial = especial;
+	}
 }
