@@ -26,9 +26,12 @@ public class ItemBO {
     public void alterar(Item item) {
     	ItemDAO dao = ItemDAO.getInstance();
     	dao.Alterar(item);
+    	System.out.println(item.getId());
+    
     }
     
     public void remover(Item item) {
+    	
     	ItemDAO dao = ItemDAO.getInstance();
     	dao.Remover(item);
     }

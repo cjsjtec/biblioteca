@@ -12,21 +12,17 @@ import javax.persistence.Table;
 public class Item {
 	@Id
 	@GeneratedValue
-	private Long id;
+	private int id;
 	
 	private String nome;
 	private String tipo;
 	private String status;
 	private String especial;
-	
-	
-
-	
-	
-	public Long getId() {
+		
+	public int getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

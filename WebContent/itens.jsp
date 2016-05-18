@@ -8,16 +8,10 @@
 		<!-- <button id="incluir-itemx" class="btn btn-default pull-right gap-top5">Cadastrar item </button> -->
 		
 <!-- Large modal -->
-<input type="button" id="teste" class="btn btn-default pull-right gap-top5" data-toggle="modal"  value="Cadastrar item">
+<input type="button" id="modal_inclui_item" class="btn btn-default pull-right gap-top5" data-toggle="modal"  value="Cadastrar item">
 
 <%@include file="modal.jsp" %>
 
-<script type="text/javascript">
-$("#teste").click(function() {
-	$('.abreModal').modal();
-	
-});
-</script>
 	</h1>
 </div>
 <div class="container">
@@ -47,6 +41,7 @@ $("#teste").click(function() {
 							<th>Nome</th>
 							<th>Tipo</th>
 							<th>Status</th>
+							<th>Especial</th>
 							<th></th>
 						</tr>
 					</thead>

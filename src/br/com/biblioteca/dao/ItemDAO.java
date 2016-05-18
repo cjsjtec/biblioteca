@@ -3,7 +3,7 @@ package br.com.biblioteca.dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-
+import javax.persistence.Query;
 
 import br.com.biblioteca.model.Item;
 
@@ -28,8 +28,9 @@ public class ItemDAO extends GenericDAO {
 		entityManager.getTransaction().begin();
 		entityManager.merge(item);
 		entityManager.getTransaction().commit();
-	}
 
+	}
+	
 	public void Remover(Item item) {
 		entityManager.getTransaction().begin();
 		entityManager.remove(item);

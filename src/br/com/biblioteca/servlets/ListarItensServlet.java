@@ -69,10 +69,11 @@ public class ListarItensServlet extends HttpServlet {
 //					retorno = 'teste';
 					break;
 				case "ALTERAR":
-					long id_alt = Integer.parseInt(request.getParameter("id"));
+					int id_alt = Integer.parseInt(request.getParameter("id"));
 					String nome_alt = request.getParameter("nome");
 					String tipo_alt = request.getParameter("tipo");
 					String status_alt = request.getParameter("status");
+					String especial_alt = request.getParameter("especial");
 					
 					Item item_alt = new Item();
 					
@@ -80,6 +81,8 @@ public class ListarItensServlet extends HttpServlet {
 					item_alt.setNome(nome_alt);
 					item_alt.setTipo(tipo_alt);
 					item_alt.setStatus(status_alt);
+					item_alt.setEspecial(especial_alt);
+					
 					ItemBO.getInstance().alterar(item_alt);
 					break;
 				case "REMOVER":
