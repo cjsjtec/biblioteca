@@ -31,12 +31,11 @@ public class ItemBO {
     }
     
     public void remover(Item item) {
-    	
     	ItemDAO dao = ItemDAO.getInstance();
     	dao.Remover(item);
     }
     
-    public Item pegarItem(long id){
+    public Item pegarItem(int id){
     	ItemDAO dao = ItemDAO.getInstance();
     	return dao.getItem(id);
     }

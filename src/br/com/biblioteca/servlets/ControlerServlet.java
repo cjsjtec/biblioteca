@@ -28,11 +28,7 @@ public class ControlerServlet extends HttpServlet {
 			CadastraUsuarioServlet cadUser = new CadastraUsuarioServlet();
 			cadUser.doPost(request, response);			
 			break;
-			
-		case "CadastrarItem":
-			ItemCadastrarServlet itemCad = new ItemCadastrarServlet();
-			itemCad.doPost(request, response);
-			break;
+		
 			
 		case "ListarItens":
 			new ListarItensServlet().doPost(request, response);

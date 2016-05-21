@@ -86,9 +86,7 @@ public class ListarItensServlet extends HttpServlet {
 					ItemBO.getInstance().alterar(item_alt);
 					break;
 				case "REMOVER":
-
 					ItemBO.getInstance().remover(ItemBO.getInstance().pegarItem(Integer.parseInt(request.getParameter("id"))));
-					
 					break;
 			}	
 

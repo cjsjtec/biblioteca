@@ -7,6 +7,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import br.com.biblioteca.model.Cliente;
+import br.com.biblioteca.model.Item;
 
 public class ClienteDAO {
 	private static ClienteDAO instance;
@@ -33,10 +34,17 @@ public class ClienteDAO {
 		entityManager = getEntityManager();
 	}
 	
-	public List<Cliente> getClientes() {
-		// cuidado, use o import javax.persistence.Query
-		List<Cliente> lista = entityManager.createQuery("select t from Cliente as t ").getResultList();
-		return lista;
+	@SuppressWarnings("unchecked")
+	public List<Cliente> getClientes(int id) {
+//		// cuidado, use o import javax.persistence.Query
+//		List<Cliente> lista = entityManager.createQuery("select t from Cliente as t ").getResultList();
+//		return lista;
+		
+		return entityManager
+//				.createQuery("select t from Cliente as t")
+				.createQuery("select t from Cliente as t where id LIKE :paramId")
+				.setParameter("paramId", id)
+				.getResultList();
 	}
 	
 	public void setClient(Cliente cliente) {
@@ -44,7 +52,17 @@ public class ClienteDAO {
 		entityManager.persist(cliente);
 		entityManager.getTransaction().commit();
 	}
-
+	
+	public void alterarCliente(Cliente cliente) {
+		entityManager.getTransaction().begin();
+		entityManager.merge(cliente);
+		entityManager.getTransaction().commit();
+	}
+	
+	public Cliente getCliente(int id) {  	// cuidado, use o import
+		return entityManager.find(Cliente.class, id);
+	}
+	
 	public void removeCliente(Cliente cliente) {
 		entityManager.getTransaction().begin();
 		entityManager.remove(cliente);

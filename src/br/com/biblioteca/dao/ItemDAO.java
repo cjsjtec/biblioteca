@@ -37,7 +37,7 @@ public class ItemDAO extends GenericDAO {
 		entityManager.getTransaction().commit();
 	}
 
-	public Item getItem(long id) {  	// cuidado, use o import
+	public Item getItem(int id) {  	// cuidado, use o import
 		return entityManager.find(Item.class, id);
 	}
 
