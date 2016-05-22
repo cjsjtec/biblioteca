@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/Controler")
+@WebServlet("/Controller")
 public class ControlerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -28,12 +28,11 @@ public class ControlerServlet extends HttpServlet {
 			CadastraUsuarioServlet cadUser = new CadastraUsuarioServlet();
 			cadUser.doPost(request, response);			
 			break;
+		
 			
-		case "CadastrarItem":
-			ItemCadastrarServlet itemCad = new ItemCadastrarServlet();
-			itemCad.doPost(request, response);
+		case "ListarItens":
+			new ListarItensServlet().doPost(request, response);
 			break;
-
 		default:
 			response.getWriter().append("Não foi possível realizar a ação solicitada:" + acao);
 			break;

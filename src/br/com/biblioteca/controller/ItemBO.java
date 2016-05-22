@@ -26,6 +26,8 @@ public class ItemBO {
     public void alterar(Item item) {
     	ItemDAO dao = ItemDAO.getInstance();
     	dao.Alterar(item);
+    	System.out.println(item.getId());
+    
     }
     
     public void remover(Item item) {
@@ -33,7 +35,7 @@ public class ItemBO {
     	dao.Remover(item);
     }
     
-    public Item pegarItem(long id){
+    public Item pegarItem(int id){
     	ItemDAO dao = ItemDAO.getInstance();
     	return dao.getItem(id);
     }

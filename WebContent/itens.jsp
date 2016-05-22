@@ -1,10 +1,17 @@
 <%@include file="cabecalho.jsp" %>
 <main>
-<form name="itens" id="itens"> 
-<div class="alert alert-info">
-	<h1>
+<form name="itens" id="itens""> 
+<div class="tilulo">
+	<h1 class="descricao-titulo">
 		<span class="titulo">Itens</span>
-		<button id="incluir-item" class="btn btn-default pull-right">Cadastrar item </button>
+
+		<!-- <button id="incluir-itemx" class="btn btn-default pull-right gap-top5">Cadastrar item </button> -->
+		
+<!-- Large modal -->
+<input type="button" id="modal_inclui_item" class="btn btn-default pull-right gap-top5" data-toggle="modal"  value="Cadastrar item">
+
+<%@include file="modal.jsp" %>
+
 	</h1>
 </div>
 <div class="container">
@@ -15,25 +22,10 @@
 					<div class="row">
 						<div class="col-md-12">
 							<div class="form-group">
-								<label>Qual e o tipo do item quer voce deseja consultar ?</label>
-								<select name="tipo_item" class="form-control">
-									<option value="">-- Selecione --</option>
-									<option value="livro">Livro</option>
-									<option value="revista">Revista</option>
-								</select>
-							</div>
-							<div class="form-group">
-								<label>O item que voce quer consultar e especial ? </label>
-								<label><input type="radio" name="especial" value="sim">Sim</label>
-								<label><input type="radio" name="especial" value="sim">Nao</label>
-							</div>
-							<div class="form-group">
 								<label>Digite o nome do item desejado.</label>
-							 	<input type="text"  class="form-control" name="descricao_item" placeholder="Digite uma breve descricao ou nome do item que deseja">
+							 	<input type="text"  class="form-control" id="busca" name="busca" placeholder="Digite uma breve descricao ou nome do item que deseja">
 							</div>
-							<div class="btn-group">
 								<input type="button" id="pesquisar_item" class="btn btn-primary btn-block" value="Pesquisar">
-							</div>		
 						</div>	
 					</div>
 					
@@ -41,36 +33,29 @@
 			</div>
 		</div>
 	</div>
+		<div class="row hidden">
+			<div class='col-md-12'>
+				<table class='table'>
+					<thead>
+						<tr>
+							<th>Nome</th>
+							<th>Tipo</th>
+							<th>Status</th>
+							<th>Especial</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						
+					</tbody>
+				</table>
+			</div>
+		</div>
 </div>
-<div id="di"></div>
 </form>
 </main>
-<script type="text/javascript">
-$("#pesquisar_item").on('click',function() {
-	$.ajax({
-		url:"/biblioteca/ListarItens",
-		data: $("#itens").serialize(),
-		type: 'post',
-		dataType: 'json',
-		timeout: 5000,
-		error: function(erro) {
-			alert('Erro no ajax -' + erro);
-		},
-	
-		success: function(retorno) {
-			console.log(retorno);
-		}
-	});
-});
+<script type="text/javascript" src="js/itens.js"></script>
 
-$("#incluir_item").on('click',function() {
-	$("#itens").attr('action', 'IncluirItens');
-});
-
-$(".alterar_item").on('click', function() {
-	$("#itens").attr('action', 'AlterarItens');
-	$(this).attr('data-val');
-});
 
 </script>
 <%@include file="footer.jsp" %>

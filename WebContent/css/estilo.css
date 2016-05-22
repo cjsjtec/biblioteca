@@ -51,7 +51,23 @@ h1.descricao-titulo {
 
 
 /*HELPERS*/
-
+.gap-top5 {
+	margin-top:5px;
+}
+.gap-left10 {
+	margin-left: 5px;
+}
 .cursor{
+	cursor: pointer;
+}
+.abreModal{
+	color: #7E3B86;
+}
+.abreModal  label{
+	font-size: 20px !important;
+	float: left;
+	margin-left: 10px;
+}
+.glyphicon {
 	cursor: pointer;
 }
