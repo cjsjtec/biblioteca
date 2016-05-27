@@ -1,4 +1,3 @@
-var global_id;
 function requestServer(data) {
 	return $.ajax({
 		url: '/biblioteca/ListarItensServlet',
@@ -31,7 +30,7 @@ $("#incluir_item").on('click',function() {
 			};
 	
 	var response = requestServer(data);
-	$("#gridSystemModalLabel").val("Cadastrar Item");
+
 });
 function montarListaitem(data) {
 	var html = "";
@@ -58,31 +57,39 @@ function montarListaitem(data) {
 	});
 	
 	$(".glyphicon-pencil").on('click', function() {
+		
 		$elm = $(this);
 		var id_atual = $elm.closest('tr').attr('id');
-		
-		$("#incluir_item").attr('id','alterar_item');
+
 		$("#id_atual").val(id_atual);
 		$("#nome").val($("#nome_"+id_atual).attr('data-val'));
 		$("#tipo").val($("#tipo_"+id_atual).attr('data-val'));
 		$("#status").val($("#status_"+id_atual).attr('data-val'));
 		$("#especial").val($("#especial_"+id_atual).attr('data-val'));
 		
-		console.log('teste');
-		$("#modal_inclui_item").trigger('click');
-		$("#incluir_item").attr('id','alterar_item');
+		$("#modal").trigger('click');
+		$("#incluir_item").hide();
+		$("#alterar_item").show();
 	});
 
 
 
 }
-$("#modal_inclui_item").click(function() {
+$("#modal").click(function() {
 	$('.abreModal').modal();
 });
 
+$("#cadastrar_item").click(function() {
+	$("#nome").val("");
+	$("#tipo").val("");
+	$("#status").val("");
+	$("#especial").val("");
+	$("#incluir_item").show();
+	$("#alterar_item").hide();
+	$("#modal").trigger('click');	
+});
+
 $("#alterar_item").on('click',function() {
-	console.log('teste_2');
-	$("#gridSystemModalLabel").html("Alterar Item");
 	var data = {
 			acao: 'ALTERAR',
 			id: $("#id_atual").val(),

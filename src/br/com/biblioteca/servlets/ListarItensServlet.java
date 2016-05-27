@@ -52,10 +52,11 @@ public class ListarItensServlet extends HttpServlet {
 					retorno  = ItemBO.getInstance().listar(request.getParameter("busca"));
 					break;
 				case "INCLUIR":
+
 					String nome = request.getParameter("nome");
 					String tipo = request.getParameter("tipo");
 					String status = request.getParameter("status");
-					String especial = request.getParameter("status");
+					String especial = request.getParameter("especial");
 					
 					Item item = new Item();
 					item.setNome(nome);

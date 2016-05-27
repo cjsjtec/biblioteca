@@ -54,25 +54,30 @@ public class ClienteServlet extends HttpServlet {
 					System.out.println(retorno);
 					break;
 				case "INCLUIR":
+					
+					String cpf = request.getParameter("cpf");
+					System.out.println(request.getParameter("cpf"));
 					String nome = request.getParameter("nome");
 					String tipo = request.getParameter("tipo");
 					
 					Cliente item = new Cliente();
 					item.setNome(nome);
 					item.setTipo(tipo);
-					
+					item.setCpf(cpf);
 					ClienteBO.getInstance().salvar(item);
 					RequestDispatcher rd = request.getRequestDispatcher("/cliente.jsp");
 					rd.forward(request,response);
 					break;
 				case "ALTERAR":
 					int id_alt = Integer.parseInt(request.getParameter("id"));
+					String cpf_alt = request.getParameter("cpf");
 					String nome_alt = request.getParameter("nome");
 					String tipo_alt = request.getParameter("tipo");
 
 					Cliente cliente_alt = new Cliente();
 					
 					cliente_alt.setId(id_alt);
+					cliente_alt.setCpf(cpf_alt);
 					cliente_alt.setNome(nome_alt);
 					cliente_alt.setTipo(tipo_alt);
 					ClienteBO.getInstance().alterar(cliente_alt);

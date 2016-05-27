@@ -19,25 +19,28 @@ function requestServer(data) {
 $("#pesquisar_cliente").on('click',function() {
 	var data = {acao: 'PESQUISA', busca: $('#busca').val()};
 	var response = requestServer(data).responseJSON;
-	console.warn(response);
+	
 	montarListacliente(response);
 });
 
 $("#incluir_cliente").on('click',function() {
 	var data = {
 				acao: 'INCLUIR',
+				cpf: $('#cpf').val(),
 				nome: $('#nome').val(),
 				tipo: $('#tipo').val()
 			};
-
+	console.log(data);
 	var response = requestServer(data);
 	$("#gridSystemModalLabel").val("Cadastrar cliente");
 });
+
 function montarListacliente(data) {
 	var html = "";
 	for (var i in data) {
 		html += "<tr id=" + data[i].id + ">" +
 				"	<td id='id_" + data[i].id + "'       data-val='" + data[i].id       +"'>"+ data[i].id   +"</td>" +
+				"	<td id='cpf_" + data[i].id + "'       data-val='" + data[i].cpf       +"'>"+ data[i].cpf   +"</td>" +
 		 		"	<td id='nome_" + data[i].id + "'     data-val='" + data[i].nome     +"'>"+ data[i].nome +"</td>" +
 		 		"	<td id='tipo_" + data[i].id + "'     data-val='" + data[i].tipo     +"'>"+ data[i].tipo +"</td>" +
 		 		"	<td><span class='glyphicon glyphicon-pencil'></span> <span class='glyphicon glyphicon-trash pull-right'></span></td>" +
@@ -59,34 +62,41 @@ function montarListacliente(data) {
 	$(".glyphicon-pencil").on('click', function() {
 		$elm = $(this);
 		var id_atual = $elm.closest('tr').attr('id');
-		
-		$("#incluir_cliente").attr('id','alterar_cliente');
 		$("#id_atual").val(id_atual);
+		$("#cpf").val($("#cpf_"+id_atual).attr('data-val'));
 		$("#nome").val($("#nome_"+id_atual).attr('data-val'));
 		$("#tipo").val($("#tipo_"+id_atual).attr('data-val'));
 		
-		console.log('testexxxx');
-		$("#modal_inclui_cliente").trigger('click');
-		$("#incluir_cliente").attr('id','alterar_cliente');
+		$("#modal").trigger('click');
+		$("#incluir_cliente").hide();
+		$("#alterar_cliente").show();
 	});
 
 
 
 }
-$("#modal_inclui_cliente").click(function() {
+$("#modal").click(function() {
 	$('.abreModal').modal();
 });
 
+$("#cadastrar_cliente").on('click',function() {
+	console.log('teste');
+	$("#incluir_cliente").show();
+	$("#alterar_cliente").hide();
+	$("#nome").val("");
+	$("#cpf").val("");
+	$("#tipo").val("");	
+	$("#modal").trigger('click');
+});
+
 $("#alterar_cliente").on('click',function() {
-	
 	$("#gridSystemModalLabel").html("Alterar cliente");
 	var data = {
 			acao: 'ALTERAR',
 			id: $("#id_atual").val(),
+			cpf: $("#cpf").val(),
 			nome: $('#nome').val(),
 			tipo: $('#tipo').val()
 		};
-	
 	var response = requestServer(data);
-	
 });

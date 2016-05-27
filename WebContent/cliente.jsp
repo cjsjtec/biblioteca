@@ -4,7 +4,8 @@
 <div class="tilulo">
 	<h1 class="descricao-titulo">
 		<span class="titulo">Clientes</span>
-		<input type="button" id="modal_inclui_cliente" class="btn btn-default pull-right gap-top5" data-toggle="modal"  value="Cadastrar cliente">
+		<input type="button" id="cadastrar_cliente" class="btn btn-default pull-right gap-top5"  value="Cadastrar cliente">
+		<input type="button" id="modal" class="hidden" data-toggle="modal">
 		<%@include file="modal_cliente.jsp" %>
 	</h1>
 </div>
@@ -33,6 +34,7 @@
 					<thead>
 						<tr>
 							<th>Id</th>
+							<th>CPF</th>	
 							<th>Nome</th>
 							<th>Tipo</th>
 							<th></th>

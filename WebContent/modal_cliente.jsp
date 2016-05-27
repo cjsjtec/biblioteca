@@ -11,7 +11,15 @@
 			<div class="col-md-12">
 				<div class="form-group">
 					<label> Nome: </label>
-					<input type="text" class="form-control" id="nome" placeholder="Adiciona o nome do item desejado."/>
+					<input type="text" class="form-control" id="nome" placeholder="Adiciona o nome do cliente desejado."/>
+				</div>
+			</div>
+        </div>
+        <div class="row">
+			<div class="col-md-12">
+				<div class="form-group">
+					<label> CPF: </label>
+					<input type="text" class="form-control" id="cpf" placeholder="Adiciona o CPF."/>
 				</div>
 			</div>
         </div>

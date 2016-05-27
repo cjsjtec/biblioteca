@@ -13,7 +13,14 @@ public class Cliente {
 	private int id;
 	private String nome;
 	private String tipo;
+	private String cpf;
 	
+	public String getCpf() {
+		return cpf;
+	}
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
 	public int getId() {
 		return id;
 	}
