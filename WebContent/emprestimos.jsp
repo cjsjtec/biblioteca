@@ -17,7 +17,7 @@
 				</div>
 			</div>
 			<div class="col-md-3">
-				<button class='btn btn-success btn-block'> Registrar emprestimo</button>
+				<button class='btn btn-success btn-block' type="button" id="btn_registrar" > Registrar emprestimo</button>
 			</div>
 			<div class="col-md-3 " >
 				<ul id="itensSelecionados" class='list-group'></ul>
@@ -40,6 +40,9 @@
 				</table>
 			</div>
 		</div>
+		
+		<script type="text/javascript" src="js/modals.js"></script>
+		
 		<script type="text/javascript" src="js/emprestimos.js"></script>
 	</form>
 </div>

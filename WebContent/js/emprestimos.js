@@ -74,5 +74,19 @@ function montarListaitem(data) {
 		
 	});
 }
+var registrarEmprestimo = function() {
+	montaPopEmprestimo();
+}
+
+var montaPopEmprestimo = function() {
+	if(selecionados.length < 1) {
+		modal.alerta("Aviso", "Selecione ao menos um item para efetuar o emprestimo");
+		return false;
+	}
+
+	modal.registrar();
+}
+
+$('#btn_registrar').on('click', montaPopEmprestimo);
 
 
