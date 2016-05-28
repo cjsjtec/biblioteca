@@ -12,11 +12,6 @@ public class ClienteBO {
 
     private ClienteBO() {
     }
-    /**teste denis
-     * Singletton
-     *
-     * @return A inst�ncia �nica da classe
-     */
     public static ClienteBO getInstance() {
         if (instance == null) {
             instance = new ClienteBO();

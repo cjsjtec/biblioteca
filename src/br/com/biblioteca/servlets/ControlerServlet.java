@@ -31,7 +31,7 @@ public class ControlerServlet extends HttpServlet {
 		
 			
 		case "ListarItens":
-			new ListarItensServlet().doPost(request, response);
+			new ItensServlet().doPost(request, response);
 			break;
 		default:
 			response.getWriter().append("Não foi possível realizar a ação solicitada:" + acao);

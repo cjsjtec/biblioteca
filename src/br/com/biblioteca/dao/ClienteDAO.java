@@ -9,19 +9,9 @@ import javax.persistence.Query;
 
 import br.com.biblioteca.model.Cliente;
 
-public class ClienteDAO {
+public class ClienteDAO extends GenericDAO {
 	private static ClienteDAO instance;
-
 	protected EntityManager entityManager;
-	
-	private EntityManager getEntityManager() {
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("biblioteca-unit");
-		if (entityManager == null) {
-			entityManager = factory.createEntityManager();
-		}
-		
-		return entityManager;
-	}
 	
 	public static ClienteDAO getInstance() {
 		if (instance == null) {
