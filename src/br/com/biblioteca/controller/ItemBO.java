@@ -18,7 +18,7 @@ public class ItemBO {
         return instance;
     }
     public void inserir(Item item) {
-
+    	item.setEmprestado("N");
     	ItemDAO dao = ItemDAO.getInstance();
     	dao.Inserir(item);
 
@@ -40,6 +40,10 @@ public class ItemBO {
     
     public String listar(String nome) {
     	return new Gson().toJson(ItemDAO.getInstance().getItens(nome));
+    }
+    
+    public String getItensAtivos(String nome) {
+    	return new Gson().toJson(ItemDAO.getInstance().getItensAtivos(nome));
     }
 
     
