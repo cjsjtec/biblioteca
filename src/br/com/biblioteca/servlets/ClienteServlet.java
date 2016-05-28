@@ -50,7 +50,7 @@ public class ClienteServlet extends HttpServlet {
 			
 			switch (acao) {
 				case "PESQUISA":
-					retorno  = ClienteBO.getInstance().listar(Integer.parseInt(request.getParameter("busca")));
+					retorno  = ClienteBO.getInstance().listar(request.getParameter("filtro"), request.getParameter("busca"));
 					System.out.println(retorno);
 					break;
 				case "INCLUIR":

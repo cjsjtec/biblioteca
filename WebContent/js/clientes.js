@@ -1,4 +1,7 @@
-var global_id;
+$("#busca").hide();
+$("#pesquisar_cliente").hide();
+$("label.lb-busca").hide();
+
 function requestServer(data) {
 	return $.ajax({
 		url: '/biblioteca/ClienteServlet',
@@ -16,8 +19,39 @@ function requestServer(data) {
 		}
 	});
 }
+
+$("#filtro").on("change", function() {
+	var $elm = $(this).val(); 
+	switch ($elm) {
+		case "CPF":
+			$("label.lb-busca").text("Digite o CPF desejado: ").show();
+			$("#busca").val("").show();
+			$("#pesquisar_cliente").show();
+			break;
+		case "NOME":
+			$("label.lb-busca").text("Digite o Nome do cliente: ").show();
+			$("#busca").val("").show();
+			$("#pesquisar_cliente").show();
+			break;
+		case "TIPO":
+			$("label.lb-busca").text("Qual tipo de solicitante e o usuario que voce deseja pesquisar : ").show();
+			$("#busca").val("").show();
+			$("#pesquisar_cliente").show();
+			break;
+		case "TODOS":
+			$("#busca").hide();
+			$("label.lb-busca").hide();
+			$("#pesquisar_cliente").show();
+			break;
+		default:
+			$("#busca").hide();
+			$("#pesquisar_cliente").hide();
+			$("label.lb-busca").hide();
+			break;
+	}
+});
 $("#pesquisar_cliente").on('click',function() {
-	var data = {acao: 'PESQUISA', busca: $('#busca').val()};
+	var data = {acao: 'PESQUISA', filtro: $("#filtro").val(), busca: $('#busca').val()};
 	var response = requestServer(data).responseJSON;
 	
 	montarListacliente(response);
@@ -99,4 +133,8 @@ $("#alterar_cliente").on('click',function() {
 			tipo: $('#tipo').val()
 		};
 	var response = requestServer(data);
+	$("#cpf_"+data.id).text(data.cpf);
+	$("#nome_"+data.id).text(data.nome);
+	$("#tipo_"+data.id).text(data.tipo);
+	$("#"+data.id).addClass("success");
 });

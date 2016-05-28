@@ -15,16 +15,32 @@
 			<div class="panel panel-primary">
 				<div class="panel-body">
 				 	
-					<div class="row ">
+					<div class="row">
 						<div class="col-md-12">
 							<div class="form-group">
-								<label>Digite a identificação do usuario.</label>
-							 	<input type="text"  class="form-control" id="busca" name="busca" placeholder="digite a identificação do solicitante">
+								<label>Escolha uma opção para o filtro .</label>
+							 	<select id="filtro" class="form-control" >
+									<option value="">-- Selecione --</option>
+									<option value="CPF">CPF</option>
+									<option value="NOME">Nome</option>
+									<option value="TIPO">Tipo</option>
+									<option value="TODOS">Todos</option>						 		
+							 	</select>
+							 	
 							</div>
-								<input type="button" id="pesquisar_cliente" class="btn btn-primary btn-block" value="Pesquisar">
+								
 						</div>	
 					</div>
 					
+					<div class="row" >
+						<div class="col-md-12">
+							<div class="form-group">
+								<label class="lb-busca"></label>
+							 	<input type="text"  id="busca" class="form-control">
+							</div>
+						</div>	
+					</div>
+					<input type="button" id="pesquisar_cliente" class="btn btn-primary btn-block " value="Pesquisar">
 				</div>
 			</div>
 		</div>

@@ -34,8 +34,8 @@ public class ClienteBO {
     	dao.setClient(cliente);
     }
     
-    public String listar(int id) {
-    	return new Gson().toJson(ClienteDAO.getInstance().getClientes(id));
+    public String listar(String parametro,String valor) {
+    	return new Gson().toJson(ClienteDAO.getInstance().getClientes(parametro, valor));
     }
     
     public void remover(Cliente c) {

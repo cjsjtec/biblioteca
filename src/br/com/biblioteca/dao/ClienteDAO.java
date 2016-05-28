@@ -5,9 +5,9 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 import br.com.biblioteca.model.Cliente;
-import br.com.biblioteca.model.Item;
 
 public class ClienteDAO {
 	private static ClienteDAO instance;
@@ -35,17 +35,29 @@ public class ClienteDAO {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<Cliente> getClientes(int id) {
-//		// cuidado, use o import javax.persistence.Query
-//		List<Cliente> lista = entityManager.createQuery("select t from Cliente as t ").getResultList();
-//		return lista;
-		
-		return entityManager
-//				.createQuery("select t from Cliente as t")
-				.createQuery("select t from Cliente as t where id LIKE :paramId")
-				.setParameter("paramId", id)
-				.getResultList();
+	public List<Cliente> getClientes(String parametro, String valor) {
+		System.out.println(parametro);
+		System.out.println(valor);
+		Query q = entityManager.createQuery("select t from Cliente as t");
+		switch (parametro) {
+		case "CPF":
+			q = entityManager.createQuery("select t from Cliente as t where cpf = :paramCpf");
+			q.setParameter("paramCpf", valor);
+			break;
+		case "NOME":
+			q = entityManager.createQuery("select t from Cliente as t where nome LIKE :paramNome");
+			q.setParameter("paramNome", "%" + valor + "%");
+			break;
+		case "TIPO":
+			q = entityManager.createQuery("select t from Cliente as t where tipo = :paramTpo");
+			q.setParameter("paramTipo", valor );
+			break;
+		}
+
+		return q.getResultList();
+
 	}
+
 	
 	public void setClient(Cliente cliente) {
 		entityManager.getTransaction().begin();

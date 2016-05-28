@@ -14,6 +14,8 @@ function requestServer(data) {
 		}
 	});
 }
+
+
 $("#pesquisar_item").on('click',function() {
 	var data = {acao: 'PESQUISA', busca: $('#busca').val()};
 	var response = requestServer(data).responseJSON;
