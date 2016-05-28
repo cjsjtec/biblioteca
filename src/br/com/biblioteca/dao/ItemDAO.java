@@ -49,4 +49,5 @@ public class ItemDAO extends GenericDAO {
 				.getResultList();
 
 	}
+
 }

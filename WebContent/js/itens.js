@@ -7,7 +7,7 @@ function requestServer(data) {
 		timeout: 5000,
 		async: false,
 		error: function(response) {
-			console.log(response);
+			console.log(response, 'ERRO AJAX');
 		},
 		success: function(resp) {
 			return resp;

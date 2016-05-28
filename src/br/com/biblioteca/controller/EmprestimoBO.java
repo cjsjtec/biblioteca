@@ -1,15 +1,16 @@
 package br.com.biblioteca.controller;
 
+import java.util.ArrayList;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import br.com.biblioteca.dao.EmprestimoDAO;
 import br.com.biblioteca.model.Emprestimo;
-import br.com.biblioteca.model.Item;
 
 public class EmprestimoBO {
 	private static EmprestimoBO instance;
-    /**
-    * Singletton
-    *
-    * @return A inst�ncia �nica da classe
-    */
+ 
     public static EmprestimoBO getInstance() {
         if (instance == null) {
             instance = new EmprestimoBO();
@@ -17,7 +18,18 @@ public class EmprestimoBO {
         return instance;
     }
 
-	public void CadastrarEmprestimo(Emprestimo emprestimo) {
+	public String analisar(String documento, String emprestimos) {
+		Gson gson = new Gson();
 		
+		ArrayList<Emprestimo> listaEmprestimo = gson.fromJson(emprestimos, new TypeToken<ArrayList<Emprestimo>>() {}.getType());
+
+		for (Emprestimo emprestimo : listaEmprestimo) {
+			EmprestimoDAO dao = EmprestimoDAO.getInstance();
+			Integer idCliente = Integer.parseInt(documento);
+			emprestimo.setIdCliente(idCliente);		
+			dao.setImprestimo(emprestimo);			
+		}
+		
+		return null;
 	}
 }

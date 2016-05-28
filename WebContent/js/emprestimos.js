@@ -19,22 +19,21 @@ function requestServer(data) {
 $('#pesquisa').on('click', function() {
 	var data = {acao: 'PESQUISA',busca: $('#busca').val()};
 	var response = requestServer(data);
-	console.log(response);
 	montarListaitem(response);
 });
+
 function remontar() {
 	var html = "";
 	for(var i in selecionados) {
-		html += "<li class='list-group-item'>"+selecionados[i].id+"<span class='pull-right'>"+selecionados[i].descricao+"</span></li>";
+		html += "<li class='list-group-item'>"+selecionados[i].idItem+"<span class='pull-right'>"+selecionados[i].nome+"</span></li>";
 	}
 	$('#itensSelecionados').html(html).show();
 }
 
-var addPop = function (id, descricao, remover) {
-	
+var addPop = function (id, descricao, remover) {	
 	
 	if(remover === false) {
-		selecionados.splice(selecionados.length, 0, {id: id, descricao: descricao});
+		selecionados.splice(selecionados.length, 0, {idItem: id, nome: descricao});
 	} else {
 		for(var i in selecionados) {
 			if(id === selecionados[i].id) {
@@ -70,7 +69,7 @@ function montarListaitem(data) {
 		} else {
 			elemento.closest('tr').removeClass('success');
 			addPop(elemento.data('id'), elemento.data('desc'), true);
-		}	
+		}
 		
 	});
 }
@@ -88,5 +87,24 @@ var montaPopEmprestimo = function() {
 }
 
 $('#btn_registrar').on('click', montaPopEmprestimo);
+
+var analisarEmprestimo = function() {
+	if($("#documentoCliente").val() == "") {
+		$('.modal-body .alert').remove()
+		var erro = "<div class='alert alert-danger' >Preencha o documento</div>";
+		$('.modal-body').prepend(erro)
+		return false;
+	}
+	
+	var data = {
+		acao: 'ANALISAREMPRESTIMO',
+		documento: $('#documentoCliente').val(),
+		selecionados: JSON.stringify(selecionados)
+	};
+	
+	requestServer(data);
+	
+	$("#modalRegistrar").modal('hide');
+}
 
 
