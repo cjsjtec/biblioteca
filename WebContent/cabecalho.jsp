@@ -29,10 +29,11 @@
 				<button type="button" data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle">Menu</button>
 			</div>
 			<div class="collapse navbar-collapse">
-			<ul class="navbar-nav nav">
-				<li><a href="itens.jsp">Itens</a></li>
-				<li><a href="cliente.jsp">Cliente</a></li>
-				<li><a href="emprestimos.jsp">Emprestimos</a></li>
-			</ul>
+				<ul class="navbar-nav nav">
+					<li><a href="itens.jsp">Itens</a></li>
+					<li><a href="cliente.jsp">Cliente</a></li>
+					<li><a href="emprestimos.jsp">Emprestimos</a></li>
+				</ul>
+			</div>
 		</nav>
 	 </header>

@@ -25,9 +25,7 @@ public class ItemBO {
     }
     public void alterar(Item item) {
     	ItemDAO dao = ItemDAO.getInstance();
-    	dao.Alterar(item);
-    	System.out.println(item.getId());
-    
+    	dao.Alterar(item);    
     }
     
     public void remover(Item item) {
@@ -43,5 +41,6 @@ public class ItemBO {
     public String listar(String nome) {
     	return new Gson().toJson(ItemDAO.getInstance().getItens(nome));
     }
+
     
 }

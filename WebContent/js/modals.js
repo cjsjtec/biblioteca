@@ -2,6 +2,7 @@ var modal = function (document, window) {
 	var modal = {};
 	
 	modal.registrar = function() {
+		$('.modal').remove();
 		var html = "<div class='modal fade bs-example-modal-sm' id='modalRegistrar' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>" +
 					 "<div class='modal-dialog modal-sm'>" +
 					   "<div class='modal-content'>" +
@@ -11,10 +12,10 @@ var modal = function (document, window) {
 					      "</button>" +
 					        "<h4 class='modal-title' id='myModalLabel'>Confirme o documento</h4>" +
 					      "</div>" +
-					      "<div class='modal-body'>" +
-					      "<label>Docuemnto</label>"+
-					      "<input type='text' class='form-control' id='documento'>"+
-					      "</div>" +
+					      "<div class='modal-body'>" + 	
+						      "<label>Docuemnto</label>"+
+						      "<input type='text' class='form-control' id='documentoCliente'>"+
+						      "</div>" +
 					      "<div class='modal-footer'>" +
 					        "<button type='button' class='btn btn-primary btn-block' id='btnRegistra' >Registrar</button>" +
 					      "</div>" +
@@ -26,7 +27,7 @@ var modal = function (document, window) {
 		$("#modalRegistrar").modal({backdrop: 'static'});
 		
 		$("#btnRegistra").on('click', function() {
-			$("#modalRegistrar").modal('hide');
+			analisarEmprestimo();
 		});
 	}
 	modal.alerta = function(titulo, texto){

@@ -9,12 +9,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.biblioteca.controller.EmprestimoBO;
 import br.com.biblioteca.controller.ItemBO;
+
 
 @WebServlet("/RegistrarEmprestimosServlet")
 public class RegistrarEmprestimosServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
 
 	public RegistrarEmprestimosServlet() {
 		super();
@@ -24,22 +25,28 @@ public class RegistrarEmprestimosServlet extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("application/json");
-	    response.setCharacterEncoding("UTF-8");
-		try {		    	
+		response.setCharacterEncoding("UTF-8");
+
+		try {
 			String retorno = null;
 			String acao = request.getParameter("acao");
-			String descricao = request.getParameter("busca");
-			
+
 			switch (acao) {
-				case "PESQUISA":					
-					retorno  = ItemBO.getInstance().listar(descricao);
+				case "PESQUISA":
+					String descricao = request.getParameter("busca");
+					retorno = ItemBO.getInstance().listar(descricao);
 					break;
-			}	
+				case "ANALISAREMPRESTIMO":
+					String documento = request.getParameter("documento");				
+					String emprestimos = request.getParameter("selecionados");
+					retorno = EmprestimoBO.getInstance().analisar(documento, emprestimos);
+					break;
+			}
 
 			PrintWriter out = response.getWriter();
-	        out.print(retorno);
+			out.print(retorno);
 
 		} catch (Exception e) {
 			response.getWriter().write(e.getMessage());

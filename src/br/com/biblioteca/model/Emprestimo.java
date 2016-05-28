@@ -1,24 +1,21 @@
 package br.com.biblioteca.model;
 
-import java.text.SimpleDateFormat;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="item")
+@Table(name="emprestimos")
 public class Emprestimo {
 	@Id
 	@GeneratedValue
 	private Long id;
 	
-	private Long Cliente;
 	private String nome;
-	private String tipo;
 
-	private String status;
+	private int idCliente;
+	
 	public Long getId() {
 		return id;
 	}
@@ -31,18 +28,12 @@ public class Emprestimo {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getStatus() {
-		return status;
-	}
-	public void setStatus(String status) {
-		this.status = status;
-	}
-	public String getTipo() {
-		return tipo;
-	}
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
 
+	public int getIdCliente() {
+		return idCliente;
+	}
+	public void setIdCliente(int idCliente) {
+		this.idCliente = idCliente;
+	}
 
 }
