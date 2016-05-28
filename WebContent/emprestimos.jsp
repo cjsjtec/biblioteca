@@ -23,14 +23,14 @@
 				<ul id="itensSelecionados" class='list-group'></ul>
 			</div>
 		</div>
-		<div class="row hidden" style="height: 600px;">
+		<div class="row hidden" style='height:200px;'>
 			<div class='col-md-12'>
 				<table class='table'>
 					<thead>
 						<tr>
 							<th>Nome</th>
 							<th>Tipo</th>
-							<th>Status</th>
+							<th>Especial</th>
 							<th></th>
 						</tr>
 					</thead>

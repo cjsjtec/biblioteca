@@ -31,11 +31,8 @@ public class EmprestimoDAO {
 	}
 
 	public void setImprestimo(Emprestimo emprestimo) {
-		System.out.println(emprestimo.getNome());
-		
 		entityManager.getTransaction().begin();
 		entityManager.persist(emprestimo);
-		entityManager.getTransaction().commit();
-	
+		entityManager.getTransaction().commit();	
 	}
 }

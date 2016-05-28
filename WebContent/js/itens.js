@@ -1,6 +1,6 @@
 function requestServer(data) {
 	return $.ajax({
-		url: '/biblioteca/ListarItensServlet',
+		url: '/biblioteca/ItensServlet',
 		type: 'POST',
 		data: data,
 		dataType: 'json',

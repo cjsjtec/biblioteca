@@ -53,7 +53,6 @@ public class ClienteDAO {
 				q.setParameter("paramTipo", valor );
 				break;
 		}
-
 		return q.getResultList();
 	}
 

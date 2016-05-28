@@ -24,34 +24,37 @@ $('#pesquisa').on('click', function() {
 
 function remontar() {
 	var html = "";
-	for(var i in selecionados) {
-		html += "<li class='list-group-item'>"+selecionados[i].idItem+"<span class='pull-right'>"+selecionados[i].nome+"</span></li>";
+	
+	if(selecionados.length > 0){
+		for(var i in selecionados) {
+			html += "<li class='list-group-item'>"+selecionados[i].idItem+"<span class='pull-right'>"+selecionados[i].nome+"</span></li>";
+		}
 	}
 	$('#itensSelecionados').html(html).show();
 }
 
-var addPop = function (id, descricao, remover) {	
+var addPop = function (id, descricao, remover) {
 	
 	if(remover === false) {
 		selecionados.splice(selecionados.length, 0, {idItem: id, nome: descricao});
 	} else {
 		for(var i in selecionados) {
-			if(id === selecionados[i].id) {
+			if(id === selecionados[i].idItem) {
 				selecionados.splice(i, 1);
 			}
 		}
-	}
-	
+	}	
 	remontar();
 }
 
 function montarListaitem(data) {
 	var html = "";
+	
 	for (var i in data) {
 		html += "<tr>" +
 		 		"	<td>"+ data[i].nome +"</td>" +
-		 		"	<td>"+ data[i].tipo +"</td>" +
-		 		"	<td>"+ data[i].status +"</td>" +
+		 		"	<td>"+ ((data[i].tipo == "R") ? "Revista" : "Livro") +"</td>" +
+		 		"	<td>"+ ((data[i].especial == "S") ? "Sim" : "Não" )+"</td>" +
 		 		"	<td><input type='checkbox' class='checado' data-desc='"+data[i].nome+"' data-id='" + data[i].id + "'></td>" +
 				"</tr>";
 	}
@@ -62,7 +65,10 @@ function montarListaitem(data) {
 		var elemento = $(this);
 		
 		if(elemento.is(':checked')) {
-			if(selecionados.length === 3) return false;
+			if(selecionados.length === 3)  {
+				modal.alerta("Aviso!", "Permitido somente 3 itens para emprestimo");
+				return false;
+			}
 			
 			elemento.closest('tr').addClass('success');	
 			addPop(elemento.data('id'), elemento.data('desc'), false);
@@ -74,19 +80,18 @@ function montarListaitem(data) {
 	});
 }
 var registrarEmprestimo = function() {
-	montaPopEmprestimo();
+	montaPopUpEmprestimo();
 }
 
-var montaPopEmprestimo = function() {
+var montaPopUpEmprestimo = function() {
 	if(selecionados.length < 1) {
 		modal.alerta("Aviso", "Selecione ao menos um item para efetuar o emprestimo");
 		return false;
 	}
-
 	modal.registrar();
 }
 
-$('#btn_registrar').on('click', montaPopEmprestimo);
+$('#btn_registrar').on('click', montaPopUpEmprestimo);
 
 var analisarEmprestimo = function() {
 	if($("#documentoCliente").val() == "") {
@@ -102,9 +107,16 @@ var analisarEmprestimo = function() {
 		selecionados: JSON.stringify(selecionados)
 	};
 	
-	requestServer(data);
+	var response = requestServer(data);
+	// TODO response
 	
 	$("#modalRegistrar").modal('hide');
+	
+	$("table.table tbody").closest('.row').addClass('hidden');
+	$("#busca").val("");
+	
+	selecionados = [];
+	remontar();	
 }
 
 

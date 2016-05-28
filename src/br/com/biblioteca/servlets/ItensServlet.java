@@ -17,14 +17,14 @@ import br.com.biblioteca.model.Item;
 /**
  * Servlet implementation class ListarItens
  */
-@WebServlet("/ListarItensServlet")
-public class ListarItensServlet extends HttpServlet {
+@WebServlet("/ItensServlet")
+public class ItensServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ListarItensServlet() {
+    public ItensServlet() {
         super();
         // TODO Auto-generated constructor stub
     }

@@ -19,23 +19,19 @@ public class ItemBO {
     }
     public void inserir(Item item) {
     	item.setEmprestado("N");
-    	ItemDAO dao = ItemDAO.getInstance();
-    	dao.Inserir(item);
-
+    	ItemDAO.getInstance().Inserir(item);
     }
+    
     public void alterar(Item item) {
-    	ItemDAO dao = ItemDAO.getInstance();
-    	dao.Alterar(item);    
+    	ItemDAO.getInstance().Alterar(item);    
     }
     
     public void remover(Item item) {
-    	ItemDAO dao = ItemDAO.getInstance();
-    	dao.Remover(item);
+    	ItemDAO.getInstance().Remover(item);
     }
     
     public Item pegarItem(int id){
-    	ItemDAO dao = ItemDAO.getInstance();
-    	return dao.getItem(id);
+    	return ItemDAO.getInstance().getItem(id);
     }
     
     public String listar(String nome) {

@@ -13,7 +13,7 @@ var modal = function (document, window) {
 					        "<h4 class='modal-title' id='myModalLabel'>Confirme o documento</h4>" +
 					      "</div>" +
 					      "<div class='modal-body'>" + 	
-						      "<label>Docuemnto</label>"+
+						      "<label>Identificação do cliente</label>"+
 						      "<input type='text' class='form-control' id='documentoCliente'>"+
 						      "</div>" +
 					      "<div class='modal-footer'>" +
