@@ -23,9 +23,12 @@ public class ItemBO {
     }
     
     public void alterar(Item item) {
+    	item.setEmprestado("N");
     	ItemDAO.getInstance().Alterar(item);    
     }
-    
+    public void alterarStausEmprestimo(Item item) {
+    	ItemDAO.getInstance().Alterar(item);    
+    }
     public void remover(Item item) {
     	ItemDAO.getInstance().Remover(item);
     }

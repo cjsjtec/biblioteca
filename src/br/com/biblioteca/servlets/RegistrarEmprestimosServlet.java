@@ -42,6 +42,7 @@ public class RegistrarEmprestimosServlet extends HttpServlet {
 					String documento = request.getParameter("documento");				
 					String emprestimos = request.getParameter("selecionados");
 					retorno = EmprestimoBO.getInstance().analisar(documento, emprestimos);
+					System.out.println(retorno);
 					break;
 			}
 

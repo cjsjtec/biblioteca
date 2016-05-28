@@ -2,6 +2,9 @@ package br.com.biblioteca.controller;
 
 import java.util.ArrayList;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import br.com.biblioteca.dao.EmprestimoDAO;
 import br.com.biblioteca.model.Cliente;
 import br.com.biblioteca.model.Emprestimo;
@@ -21,33 +24,52 @@ public class EmprestimoBO {
     }
 
 	public String analisar(String registro, String emprestimos) {
+				
 		Gson gson = new Gson();
 		
+		JSONObject retorno = new JSONObject();
+		
 		ArrayList<Emprestimo> listaEmprestimo = gson.fromJson(emprestimos, new TypeToken<ArrayList<Emprestimo>>() {}.getType());
+		
+		int totalEmprestimos = countEmprestimos(registro) + listaEmprestimo.size();
+		
+		if(totalEmprestimos > 3) {
+			return retorno.put("intervencao","Há emprestimo na posse do infeliz!").toString();
+		}
 		
 		Cliente cliente = ClienteBO.getInstance().pegarCliente(Integer.parseInt(registro));
 		
 		EmprestimoDAO dao = EmprestimoDAO.getInstance();
 		
-		ArrayList<String> retorno = new ArrayList<String>();
-				
+		JSONArray recusas = new JSONArray();
+		String tipo_cliente = cliente.getTipo();
+		
 		for (Emprestimo emprestimo : listaEmprestimo) {
 			Item item = ItemBO.getInstance().pegarItem(Integer.parseInt(emprestimo.getIdItem()));
+			String especial = item.getEspecial();
 			
-			if(item.getTipo() == "E" && cliente.getTipo() == "A") {
-				retorno.add(emprestimo.getNome());
+			if(tipo_cliente.equals("A") && especial.equals("S")) {
+				recusas.put(emprestimo.getNome());
 				continue;
 			}
-			
-			item.setEmprestado("S");
 			
 			emprestimo.setIdCliente(registro);
 			emprestimo.setStatus("A");
 			dao.setImprestimo(emprestimo);
 			
-			ItemBO.getInstance().alterar(item);
+			item.setEmprestado("S");
+			ItemBO.getInstance().alterarStausEmprestimo(item);
 		}
 		
-		return null;
+		if(recusas.length() > 0) {
+			retorno.put("recusados", recusas);
+		} else {
+			retorno.put("sucesso", "Todos os itens inseridos com sucesso");			
+		}
+		
+		return retorno.toString();
+	}
+	public int countEmprestimos(String idCliente) {
+		return EmprestimoDAO.getInstance().getEmprestimos(idCliente).size();
 	}
 }

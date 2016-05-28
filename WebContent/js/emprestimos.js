@@ -108,10 +108,22 @@ var analisarEmprestimo = function() {
 	};
 	
 	var response = requestServer(data);
-	// TODO response
 	
-	$("#modalRegistrar").modal('hide');
-	
+	if(response.intervencao) {
+		var msg = "<div class='alert alert-danger'>"+response.intervencao+"</div>";
+		$('.modal-body').prepend(msg);		
+	} else if(response.recusados) {
+		var msg = "<div class='alert alert-danger'>Itens recusados";
+		
+		for(i in response.recusados) {
+			msg += "<li>"+response.recusados[i]+"</li>";
+		}
+		msg += "</div>";
+		$('.modal-body').prepend(msg);
+	} else {
+		$("#modalRegistrar").modal('hide');		
+	}
+
 	$("table.table tbody").closest('.row').addClass('hidden');
 	$("#busca").val("");
 	

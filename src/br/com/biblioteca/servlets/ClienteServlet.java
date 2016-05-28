@@ -11,9 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.biblioteca.controller.ClienteBO;
-import br.com.biblioteca.controller.ItemBO;
 import br.com.biblioteca.model.Cliente;
-import br.com.biblioteca.model.Item;
 
 /**
  * Servlet implementation class ClienteServlet

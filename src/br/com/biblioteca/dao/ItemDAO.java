@@ -3,9 +3,7 @@ package br.com.biblioteca.dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.Query;
 
-import com.google.gson.JsonElement;
 
 import br.com.biblioteca.model.Item;
 
