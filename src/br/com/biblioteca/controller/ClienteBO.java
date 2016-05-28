@@ -25,13 +25,11 @@ public class ClienteBO {
     }
     
     public Cliente pegarCliente(int id){
-    	ClienteDAO dao = ClienteDAO.getInstance();
-    	return dao.getCliente(id);
+    	return ClienteDAO.getInstance().getCliente(id);
     }
     
     public void salvar(Cliente cliente) {
-    	ClienteDAO dao = ClienteDAO.getInstance();
-    	dao.setClient(cliente);
+    	ClienteDAO.getInstance().setClient(cliente);
     }
     
     public String listar(String parametro,String valor) {
@@ -39,13 +37,9 @@ public class ClienteBO {
     }
     
     public void remover(Cliente c) {
-    	ClienteDAO dao = ClienteDAO.getInstance();
-    	dao.removeCliente(c);
+    	ClienteDAO.getInstance().removeCliente(c);
     }
     public void alterar(Cliente c) {
-    	ClienteDAO dao = ClienteDAO.getInstance();
-    	dao.alterarCliente(c);
-    	System.out.println(c.getId());
-    
+    	ClienteDAO.getInstance().alterarCliente(c);
     }
 }

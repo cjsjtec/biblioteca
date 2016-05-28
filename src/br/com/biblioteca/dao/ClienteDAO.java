@@ -36,8 +36,6 @@ public class ClienteDAO {
 	
 	@SuppressWarnings("unchecked")
 	public List<Cliente> getClientes(String parametro, String valor) {
-		System.out.println(parametro);
-		System.out.println(valor);
 		Query q = entityManager.createQuery("select t from Cliente as t");
 		switch (parametro) {
 		case "CPF":
@@ -53,9 +51,7 @@ public class ClienteDAO {
 			q.setParameter("paramTipo", valor );
 			break;
 		}
-
 		return q.getResultList();
-
 	}
 
 	
