@@ -8,8 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.biblioteca.controller.EmprestimoBO;
-import br.com.biblioteca.model.Emprestimo;
 
 /**
  * Servlet implementation class RegistrarDevolucao

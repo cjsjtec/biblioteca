@@ -36,12 +36,13 @@ public class RegistrarEmprestimosServlet extends HttpServlet {
 			switch (acao) {
 				case "PESQUISA":
 					String descricao = request.getParameter("busca");
-					retorno = ItemBO.getInstance().listar(descricao);
+					retorno = ItemBO.getInstance().getItensAtivos(descricao);
 					break;
 				case "ANALISAREMPRESTIMO":
 					String documento = request.getParameter("documento");				
 					String emprestimos = request.getParameter("selecionados");
 					retorno = EmprestimoBO.getInstance().analisar(documento, emprestimos);
+					System.out.println(retorno);
 					break;
 			}
 

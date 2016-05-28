@@ -1,11 +1,9 @@
 package br.com.biblioteca.controller;
 
 import com.google.gson.Gson;
-
 import br.com.biblioteca.dao.ClienteDAO;
-import br.com.biblioteca.dao.ItemDAO;
 import br.com.biblioteca.model.Cliente;
-import br.com.biblioteca.model.Item;
+
 
 public class ClienteBO {
 	private static ClienteBO instance;

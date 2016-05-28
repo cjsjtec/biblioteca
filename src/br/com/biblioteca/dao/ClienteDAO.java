@@ -26,20 +26,22 @@ public class ClienteDAO extends GenericDAO {
 	
 	@SuppressWarnings("unchecked")
 	public List<Cliente> getClientes(String parametro, String valor) {
+
 		Query q = entityManager.createQuery("select t from Cliente as t");
+		
 		switch (parametro) {
-		case "CPF":
-			q = entityManager.createQuery("select t from Cliente as t where cpf = :paramCpf");
-			q.setParameter("paramCpf", valor);
-			break;
-		case "NOME":
-			q = entityManager.createQuery("select t from Cliente as t where nome LIKE :paramNome");
-			q.setParameter("paramNome", "%" + valor + "%");
-			break;
-		case "TIPO":
-			q = entityManager.createQuery("select t from Cliente as t where tipo = :paramTpo");
-			q.setParameter("paramTipo", valor );
-			break;
+			case "CPF":
+				q = entityManager.createQuery("select t from Cliente as t where cpf = :paramCpf");
+				q.setParameter("paramCpf", valor);
+				break;
+			case "NOME":
+				q = entityManager.createQuery("select t from Cliente as t where nome LIKE :paramNome");
+				q.setParameter("paramNome", "%" + valor + "%");
+				break;
+			case "TIPO":
+				q = entityManager.createQuery("select t from Cliente as t where tipo = :paramTpo");
+				q.setParameter("paramTipo", valor );
+				break;
 		}
 		return q.getResultList();
 	}

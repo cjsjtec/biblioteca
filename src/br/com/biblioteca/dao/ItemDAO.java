@@ -3,7 +3,7 @@ package br.com.biblioteca.dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.Query;
+
 
 import br.com.biblioteca.model.Item;
 
@@ -42,12 +42,21 @@ public class ItemDAO extends GenericDAO {
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Item> getItens(String nome) { 
+	public List<Item> getItens(String nome) {
 		return entityManager
 				.createQuery("select t from Item as t where t.nome LIKE :paramNome")
 				.setParameter("paramNome", "%" + nome + "%")
 				.getResultList();
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Item> getItensAtivos(String nome) {
+		return entityManager
+				.createQuery("select t from Item as t where t.nome LIKE :paramNome and t.status = :paramStatus and emprestado = :paramEmprestado")
+				.setParameter("paramNome", "%" + nome + "%")
+				.setParameter("paramStatus","A")
+				.setParameter("paramEmprestado","N")
+				.getResultList();
 
 	}
-
 }

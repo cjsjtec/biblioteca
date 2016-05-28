@@ -28,13 +28,9 @@ public class ControlerServlet extends HttpServlet {
 			CadastraUsuarioServlet cadUser = new CadastraUsuarioServlet();
 			cadUser.doPost(request, response);			
 			break;
-		
-			
-		case "ListarItens":
-			new ItensServlet().doPost(request, response);
-			break;
+
 		default:
-			response.getWriter().append("Não foi possível realizar a ação solicitada:" + acao);
+			response.getWriter().append("Nï¿½o foi possï¿½vel realizar a aï¿½ï¿½o solicitada:" + acao);
 			break;
 		}	
 	}

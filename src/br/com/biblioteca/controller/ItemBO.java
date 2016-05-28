@@ -18,13 +18,17 @@ public class ItemBO {
         return instance;
     }
     public void inserir(Item item) {
+    	item.setEmprestado("N");
     	ItemDAO.getInstance().Inserir(item);
-
-    }
-    public void alterar(Item item) {
-    	ItemDAO.getInstance().Alterar(item);    
     }
     
+    public void alterar(Item item) {
+    	item.setEmprestado("N");
+    	ItemDAO.getInstance().Alterar(item);    
+    }
+    public void alterarStausEmprestimo(Item item) {
+    	ItemDAO.getInstance().Alterar(item);    
+    }
     public void remover(Item item) {
     	ItemDAO.getInstance().Remover(item);
     }
@@ -35,6 +39,10 @@ public class ItemBO {
     
     public String listar(String nome) {
     	return new Gson().toJson(ItemDAO.getInstance().getItens(nome));
+    }
+    
+    public String getItensAtivos(String nome) {
+    	return new Gson().toJson(ItemDAO.getInstance().getItensAtivos(nome));
     }
 
     

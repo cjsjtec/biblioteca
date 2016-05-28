@@ -1,10 +1,9 @@
 package br.com.biblioteca.model;
 
-import javax.persistence.Column;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-//import javax.persistence.Table;
 import javax.persistence.Table;
 
 @Entity
@@ -18,6 +17,7 @@ public class Item {
 	private String tipo;
 	private String status;
 	private String especial;
+	private String emprestado;
 		
 	public int getId() {
 		return id;
@@ -49,5 +49,11 @@ public class Item {
 	}
 	public void setEspecial(String especial) {
 		this.especial = especial;
+	}
+	public String getEmprestado() {
+		return emprestado;
+	}
+	public void setEmprestado(String emprestado) {
+		this.emprestado = emprestado;
 	}
 }
