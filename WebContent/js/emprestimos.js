@@ -17,6 +17,8 @@ function requestServer(data) {
 }
 
 $('.btn-default').on('click', function() {
+	selecionados = [];
+	remontar();
 	
 	if($("input[type=radio][name=acao]:checked").val() == "E") {
 		var data = {acao: 'PESQUISA',busca: $("#busca").val()};
@@ -229,6 +231,7 @@ var analisarEmprestimo = function() {
 
 $('input[type=radio][name=acao]').on('click', function() {
 	selecionados = [];
+	remontar();
 	$("table.table").closest('.row').addClass('hidden');
 	if($(this).val() == "D") {
 		$('#sessaoDevolve').removeClass("hidden");
