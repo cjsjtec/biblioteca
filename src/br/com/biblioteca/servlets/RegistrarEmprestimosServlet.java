@@ -32,7 +32,6 @@ public class RegistrarEmprestimosServlet extends HttpServlet {
 		try {
 			String retorno = null;
 			String acao = request.getParameter("acao");
-
 			switch (acao) {
 				case "PESQUISA":
 					String descricao = request.getParameter("busca");
@@ -40,9 +39,16 @@ public class RegistrarEmprestimosServlet extends HttpServlet {
 					break;
 				case "ANALISAREMPRESTIMO":
 					String documento = request.getParameter("documento");				
-					String emprestimos = request.getParameter("selecionados");
+					String emprestimos = request.getParameter("selecionados");					
 					retorno = EmprestimoBO.getInstance().analisar(documento, emprestimos);
-					System.out.println(retorno);
+					break;
+				case "EMPRESTADOS":
+					String identificacao = request.getParameter("identificacao");
+					retorno = EmprestimoBO.getInstance().getEmprestimos(identificacao);
+					break;
+				case "DEVOLVER":
+					String devolvidos = request.getParameter("selecionados");
+					retorno = EmprestimoBO.getInstance().devolver(devolvidos);
 					break;
 			}
 

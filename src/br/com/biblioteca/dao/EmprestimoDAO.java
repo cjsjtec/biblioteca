@@ -9,6 +9,7 @@ import javax.persistence.Persistence;
 //import org.hibernate.Query;
 import javax.persistence.Query;
 
+import br.com.biblioteca.model.Cliente;
 import br.com.biblioteca.model.Emprestimo;
 
 public class EmprestimoDAO {
@@ -35,10 +36,16 @@ public class EmprestimoDAO {
 		entityManager = getEntityManager();
 	}
 
-	public void setImprestimo(Emprestimo emprestimo) {
+	public void setEmprestimo(Emprestimo emprestimo) {
 		entityManager.getTransaction().begin();
 		entityManager.persist(emprestimo);
 		entityManager.getTransaction().commit();	
+	}
+	
+	public void alterarEmprestimo(Emprestimo emprestimo) {
+		entityManager.getTransaction().begin();
+		entityManager.merge(emprestimo);
+		entityManager.getTransaction().commit();
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -47,8 +54,9 @@ public class EmprestimoDAO {
 //		return entityManager.createQuery("select count(*) from Emprestimo as t where t.idCliente = :paramIdCliente")
 //		.setParameter("paramIdCliente", idCliente)
 //		.getMaxResults();
-		Query query = entityManager.createQuery("select t from Emprestimo as t where t.idCliente = :paramIdCliente")
-		.setParameter("paramIdCliente", idCliente);
+		Query query = entityManager.createQuery("select t from Emprestimo as t where t.idCliente = :paramIdCliente and t.status = :paramStatus")
+		.setParameter("paramIdCliente", idCliente)
+		.setParameter("paramStatus", "A");
 	
 		return query.getResultList();
 	}

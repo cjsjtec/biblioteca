@@ -1,7 +1,6 @@
 package br.com.biblioteca.controller;
 
 import java.util.ArrayList;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -55,7 +54,7 @@ public class EmprestimoBO {
 			
 			emprestimo.setIdCliente(registro);
 			emprestimo.setStatus("A");
-			dao.setImprestimo(emprestimo);
+			dao.setEmprestimo(emprestimo);
 			
 			item.setEmprestado("S");
 			ItemBO.getInstance().alterarStausEmprestimo(item);
@@ -72,4 +71,28 @@ public class EmprestimoBO {
 	public int countEmprestimos(String idCliente) {
 		return EmprestimoDAO.getInstance().getEmprestimos(idCliente).size();
 	}
+	
+	public String getEmprestimos(String idCliente) {
+		return new Gson().toJson(EmprestimoDAO.getInstance().getEmprestimos(idCliente));	
+	}
+
+	public String devolver(String devolvidos) {
+		Gson gson = new Gson();
+		ArrayList<Emprestimo> listaEmprestimo = gson.fromJson(devolvidos, new TypeToken<ArrayList<Emprestimo>>() {}.getType());
+		
+		for (Emprestimo emprestimo : listaEmprestimo) {
+			ItemBO itembo = ItemBO.getInstance();
+			
+			Item item = itembo.pegarItem(Integer.parseInt(emprestimo.getIdItem()));
+			item.setEmprestado("N");
+			itembo.alterar(item);
+
+			emprestimo.setStatus("S");
+			EmprestimoDAO.getInstance().alterarEmprestimo(emprestimo);			
+		}
+		
+		JSONObject retorno = new JSONObject();
+		retorno.put("successo", "Tudo certo broww");
+		return retorno.toString();
+	}	
 }
