@@ -10,7 +10,6 @@ public class ClienteBO {
 
     private ClienteBO() {
     }
-
     public static ClienteBO getInstance() {
         if (instance == null) {
             instance = new ClienteBO();

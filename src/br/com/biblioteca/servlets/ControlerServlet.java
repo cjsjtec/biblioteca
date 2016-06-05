@@ -28,6 +28,7 @@ public class ControlerServlet extends HttpServlet {
 			CadastraUsuarioServlet cadUser = new CadastraUsuarioServlet();
 			cadUser.doPost(request, response);			
 			break;
+
 		default:
 			response.getWriter().append("N�o foi poss�vel realizar a a��o solicitada:" + acao);
 			break;

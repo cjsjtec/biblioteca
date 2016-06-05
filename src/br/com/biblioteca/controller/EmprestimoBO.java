@@ -45,7 +45,7 @@ public class EmprestimoBO {
 		
 		for (Emprestimo emprestimo : listaEmprestimo) {
 			Item item = ItemBO.getInstance().pegarItem(Integer.parseInt(emprestimo.getIdItem()));
-			String especial = item.getEspecial();
+			String especial = item.getEspecial();	
 			
 			if(tipo_cliente.equals("A") && especial.equals("S")) {
 				recusas.put(emprestimo.getNome());
