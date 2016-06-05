@@ -32,7 +32,8 @@
 				<ul class="navbar-nav nav">
 					<li><a href="itens.jsp">Itens</a></li>
 					<li><a href="cliente.jsp">Cliente</a></li>
-					<li><a href="emprestimos.jsp">Emprestimos</a></li>
+					<li><a href="emprestimos.jsp">Emprestimos</a></li>					
+					<li><a href="sair.jsp">Sair</a></li>
 				</ul>
 			</div>
 		</nav>
